@@ -1,5 +1,8 @@
-from os import chdir, path, sep, get_terminal_size, rename
-from glob import iglob  # 'iglob' is better for when your working with huge directories
+from os import chdir, path, sep, get_terminal_size, rename, listdir
+from glob import (
+    iglob,
+    glob,
+)  # 'iglob' is better for when your working with huge directories
 from tqdm import (
     tqdm,
 )  # 'tqdm' is just a progress bar module. run `pip install tqdm` first
@@ -66,11 +69,14 @@ if __name__ == "__main__":
             break
 
     renameExtensions = f"Rename a certain filetype? (leave to rename every file in {searchDirectory!r})\n"
-
     renameTo = input("Enter Output name (index will be added)")
 
-    for file in iglob("**", recursive=True):
+    # zeroOffset = round(len(listdir("./")) // 10)
+
+    for file in glob("**", recursive=True):
         file = dissect_file(file)
         if file[2] and file[1] == renameExtensions:
             # [ ] Get Zero Offset
             rename(".".join(file[0:1]), "dummy")
+
+    # print(zeroOffset)
