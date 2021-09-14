@@ -1,7 +1,9 @@
 # filemodifier
 This script can change all file extensions from files in a directory.
 Run the script and drag any file onto the script window and press enter or manually enter a path.
+
 Example:
+
 "C:\Users\Admin\Desktop\New folder\jeg.png"
 
 C:\Users\Admin\Desktop\New folder\jeg.png
