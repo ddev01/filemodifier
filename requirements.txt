@@ -1,0 +1,4 @@
+pathlib
+colorama
+tqdm
+pyinstaller
